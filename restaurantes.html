@@ -1,7 +1,168 @@
+<!DOCTYPE html>
 <html>
 <head>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .header {
+      background-color: orange;
+      color: black;
+      padding: 20px;
+      text-align: center;
+      display: flex;
+      align-items: center;
+    }
+    
+    .logo {
+      margin-right: auto;
+    }
+    
+    .logo img {
+      width: 150px;
+    }
+    
+    .slogan {
+      flex-grow: 1;
+    }
+    
+    .header a {
+      color: black;
+      text-decoration: none;
+      margin-left: 10px;
+    }
+    
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      padding: 20px;
+    }
+
+    .search-container {
+      margin-left: 10px;
+    }
+
+    .direitos {
+      text-align: center;
+    }
+    
+    .item {
+      width: 300px;
+      margin: 20px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      padding: 20px;
+    }
+    
+    .item img {
+      width: 100%;
+      border-radius: 5px;
+      margin-bottom: 10px;
+    }
+    
+    .item h3 {
+      margin: 0;
+      font-size: 18px;
+      color: #333;
+    }
+    
+    .item p {
+      margin: 10px 0;
+      color: #777;
+    }
+
+    .orange-block {
+      background-color: orange;
+      padding: 20px;
+      color: black;
+      text-align: center;
+      bottom: 0;
+      width: 100%;
+      height: 20px;
+    }
+  </style>
 </head>
 <body>
-    <h1> Lista de restaurantes </h1>
+
+  <div class="header">
+    <div class="logo">
+      <img src="OneStop.png" alt="Logo">
+    </div>
+    
+    <div class="slogan">
+      <h1>One Stop Delivery</h1>
+      <p>Faça seu pedido online!</p>
+    </div>
+    <div class="links">
+      <a href="Pagina inicial.html"><button>Página Inicial</button></a>
+      <a href="Pagina Promocoes.html"><button>Promoções</button></a>
+      <a href="pagina entrar.html"><button>Entrar</button></a>
+      <a href="pagina cadastro de clientes.html"><button>Cadastro de clientes</button></a>
+      <a href="pagina cadastro de produto.html"><button>Cadastro de Produtos</button></a>
+    </div>
+    <div class="search-container">
+      <input type="text" class="search-input" placeholder="Pesquisar...">
+    </div>
+  </div>
+  
+  <div class="container">
+    <div class="item">
+      <img src="rest.png" alt="restaurantes">
+      <h3>Restaurantes</h3>
+      <p>Deliciosos restaurantes com variedades de comida para você e sua familia!</p>
+    </div>
+    
+    <div class="item">
+      <img src="farm.png" alt="Farmácias">
+      <h3>Farmácias</h3>
+      <p>Farmácias prontas e equipadas para melhor te atender!</p>
+    </div>
+    
+    <div class="item">
+      <img src="bar.png" alt="bar">
+      <h3>Bares</h3>
+      <p>Bares com as melhores bebidas para suas festas e fins de semana!</p>
+    </div>
+
+    <div class="item">
+      <img src="supermercado.jpg" alt="Supermercado">
+      <h3>Supermercados</h3>
+      <p>A rede de supermercados mais proxima de você!</p>
+    </div>
+
+    <div class="item">
+      <img src="padaria.jpg" alt="padaria">
+      <h3>Padarias</h3>
+      <p>Descubra um mundo de sabores em nossas panificadoras!</p>
+    </div>
+
+    <div class="item">
+      <img src="confeitaria.jpg" alt="confeitaria">
+      <h3>Confeitarias</h3>
+      <p>Na confeitaria, cada doce é uma obra de arte que adoça o paladar e alegra o coração!</p>
+    </div>
+
+    <div class="item">
+      <img src="agua.jpg" alt="Água e gás">
+      <h3>Água e gás</h3>
+      <p>Sua revendedora de água e gás mais perto para melhor lhe atender!</p>
+    </div>
+
+    <div class="item">
+      <img src="pet.jpg" alt="Pet shops">
+      <h3>Pet shops</h3>
+      <p>O cuidado especial que seu animal precisa!</p>
+    </div>
+
+    <div class="orange-block">
+    <h2></h2>
+    <p>&copy; 2023 OneStop Delivery.</p>
+  </div>
+
 </body>
 </html>
