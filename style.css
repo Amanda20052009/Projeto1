@@ -12,7 +12,7 @@ body {
 }
 
 button {
-    background-color: #3498db;
+    background-color: #32a4a8;
     border: none;
     color: white;
     padding: 5px 10px;
@@ -26,6 +26,6 @@ button:hover {
 }
 
 a {
-    color: white;
+    color: black;
     text-decoration: none;
 }
