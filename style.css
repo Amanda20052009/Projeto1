@@ -1,36 +1,31 @@
-<!DOCTYPE html>
-<html>
-<head>
-</head>
-<body>
-<style>
-    .item {
-      width: 300px;
-      margin: 20px;
-      border: 1px solid #ddd;
-      border-radius: 5px;
-      padding: 20px;
-    }
-    
-    .item img {
-      width: 100%;
-      border-radius: 5px;
-      margin-bottom: 10px;
-    }
-    
-    .item h3 {
-      margin: 0;
-      font-size: 30px;
-      color: #255;
-    }
-    
-    .item p {
-      margin: 10px 0;
-      color: #255;
-    }
+body {
+    font-family: Arial, sans-serif;
+}
 
-    .slogan {
-      flex-grow: 1;
-    }
-</style>
-    
+.slogan {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.item {
+    margin-bottom: 10px;
+}
+
+button {
+    background-color: #3498db;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
