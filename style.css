@@ -10,6 +10,7 @@ body {
 .item {
     margin-bottom: 10px;
     padding: 5px 10px;
+    width: 200px;
 }
 
 button {
