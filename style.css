@@ -1,5 +1,14 @@
 body {
     font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+}
+
+.magazine {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
 .slogan {
@@ -7,10 +16,21 @@ body {
     margin-bottom: 20px;
 }
 
+.restaurant {
+    display: inline-block;
+    vertical-align: top;
+    margin: 10px;
+    padding: 15px;
+    background-color: #ffffff;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+}
+
 .item {
-    margin-bottom: 10px;
     width: 200px;
-    align: center
+    height: 150px;
+    margin-bottom: 10px;
+    display: block;
+    margin: 0 auto;
 }
 
 button {
@@ -21,6 +41,8 @@ button {
     border-radius: 5px;
     text-decoration: none;
     cursor: pointer;
+    display: block;
+    margin: 0 auto;
 }
 
 button:hover {
@@ -30,4 +52,6 @@ button:hover {
 a {
     color: black;
     text-decoration: none;
+    display: block;
+    text-align: center;
 }
