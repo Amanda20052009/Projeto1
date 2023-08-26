@@ -8,6 +8,39 @@
   <h1>Aqui ficará o texto de relatório da visita técnica.</h1><br>
   
   <h1>Aqui ficará a galeria de fotos</h1>
+
+ <div class="header">
+    <h1>Galeria de Fotos</h1>
+    <button id="darkModeToggle">Ativar Modo Escuro</button>
+  </div>
+  <div class="gallery">
+    <img src="foto1.jpg" alt="Foto 1">
+    <img src="foto2.jpg" alt="Foto 2">
+    <img src="foto3.jpg" alt="Foto 3">
+    <img src="foto4.jpg" alt="Foto 4">
+    <img src="foto5.jpg" alt="Foto 5">
+    <img src="foto6.jpg" alt="Foto 6">
+  </div>
+
+  <script>
+    const darkModeToggle = document.getElementById('darkModeToggle');
+    const body = document.body;
+
+    darkModeToggle.addEventListener('click', () => {
+      body.classList.toggle('dark-mode');
+    });
+  </script>
+</body>
+</html>
+Neste exemplo, as imagens da galeria são exibidas com margens, sombras suaves e um layout flexível. A galeria tem um cabeçalho azul claro, e ao clicar no botão "Ativar Modo Escuro", o esquema de cores da página muda para azul escuro com texto branco. Certifique-se de substituir os nomes dos arquivos de imagem (foto1.jpg, foto2.jpg, etc.) pelos URLs ou caminhos das suas próprias imagens.
+
+Além disso, para uma galeria mais avançada e interativa, você pode considerar o uso de bibliotecas de galeria de imagens, como o "Lightbox" para exibir imagens em um modal pop-up quando clicadas.
+
+
+
+
+
+
   
 </body>
 </html>
