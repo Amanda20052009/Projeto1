@@ -68,26 +68,56 @@ a {
   
  // 
 
-{
-    background-color: white;
-    color: black;
-    font-family: Arial, sans-serif;
+body {
+    background-color: #000;
+    color: #fff;
     margin: 0;
-    padding: 0;
+    font-family: Arial, sans-serif;
   }
-  
-  .container {
+
+  .header {
+    background-color: #0074D9;
+    padding: 10px;
+    text-align: center;
+  }
+
+  .gallery {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
     padding: 20px;
-    background-color: black;
   }
-  
-  .container img {
-    max-width: 100%;
-    height: auto;
-    max-height: 300px; /* Altura máxima das fotos */
-    border: 5px solid white; /* Borda branca */
+
+  .photo {
+    width: 300px;
+    height: 200px;
+    background-color: #fff;
+    border: 1px solid #0074D9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000;
+    font-weight: bold;
+    font-size: 18px;
+  }
+
+  /* Estilizando a barra de rolagem */
+  .gallery {
+    overflow-y: scroll;
+    scrollbar-color: #0074D9 #000;
+    scrollbar-width: thin;
+  }
+
+  /* Cor da barra de rolagem */
+  .gallery::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  .gallery::-webkit-scrollbar-thumb {
+    background-color: #0074D9;
+  }
+
+  .gallery::-webkit-scrollbar-track {
+    background-color: #000;
   }
