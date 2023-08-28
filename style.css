@@ -79,30 +79,30 @@ a {
 }
 
 .magazine {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
+    text-align: center;
 }
 
 .slogan {
-    text-align: center;
-    margin-bottom: 20px;
+    background-color: #0074D9;
+    padding: 10px;
+    color: #fff;
 }
 
 .visit-list {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-around;
     cursor: pointer;
     padding: 20px;
 }
 
 .visit {
-    width: calc(25% - 20px); /* Distribuir em 4 colunas com margem */
+    width: calc(25% - 20px);
     margin-bottom: 20px;
     background-color: #DCDCDC;
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
-    padding: 20px;
+    text-align: center;
+    padding: 15px;
 }
 
 .item {
