@@ -1,61 +1,107 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1080px, initial-scale=1.0">
+    <title>Relatório de Visita Tecnica</title>
+    <link rel="stylesheet" href="Amanda.css">
+
+    <script>
+        // JavaScript para controlar o carrossel
+        let currentSlide = 0;
+
+        function showSlide(index) {
+            const slides = document.querySelectorAll('.carousel-slide');
+            const images = document.querySelectorAll('.carousel-img');
+
+            slides[currentSlide].classList.remove('active');
+            images[currentSlide].classList.remove('active');
+
+            currentSlide = index;
+
+            slides[currentSlide].classList.add('active');
+            images[currentSlide].classList.add('active');
+        }
+
+        function moveCarousel(direction) {
+            const wrapper = document.querySelector('.carousel-wrapper');
+            const slideWidth = document.querySelector('.carousel-slide').clientWidth;
+            const numSlides = document.querySelectorAll('.carousel-slide').length;
+            
+            if (direction === 'prev' && currentSlide > 0) {
+                currentSlide--;
+            } else if (direction === 'next' && currentSlide < numSlides - 1) {
+                currentSlide++;
+            }
+
+            wrapper.style.transform = `translateX(-${currentSlide * slideWidth}px)`;
+        }
+
+        function openLightbox(index) {
+            const lightbox = document.querySelector('.lightbox');
+            const selectedImage = document.querySelectorAll('.carousel-img')[index];
+            const lightboxImage = document.querySelector('.lightbox img');
+
+            lightboxImage.src = selectedImage.src;
+            lightbox.style.display = 'flex';
+        }
+
+        function closeLightbox() {
+            const lightbox = document.querySelector('.lightbox');
+            lightbox.style.display = 'none';
+        }
+    </script>
 </head>
-<bodyy>
-    <div class="magazine">
-        <div class="slogan">
-            <h3>Galeria de Fotos</h3>
-        </div>
 
-        <div>
-            <h2>Relatório da visita</h2>
-        </div>
+<body>
+    <div class="Relatorio">
+      
 
-        <div class="carousel-container">
+            <h1>Galeria da Visita Técnica</h1>
+
+    <!-- Carrossel de Imagens -->
+    <div class="carousel-container">
         <div class="carousel-wrapper">
             <div class="carousel-slide active">
-                <img class="carousel-img active" src="fotos/ifro.jpeg" onclick="showSlide(0); openLightbox(0)">
-            </div>
-            <div class="carousel-slide active">
-                <img class="carousel-img active" src="fotos/coelho.jpeg" onclick="showSlide(0); openLightbox(0)">
+                <img class="carousel-img active" src="/1.jpeg" onclick="showSlide(0); openLightbox(0)">
             </div>
             <div class="carousel-slide">
-                <img class="carousel-img" src="fotos/coelhos.jpeg" onclick="showSlide(1); openLightbox(1)">
+                <img class="carousel-img" src="/2.jpeg" onclick="showSlide(1); openLightbox(1)">
             </div>
-            <div class="carousel-slide active">
-                <img class="carousel-img active" src="fotos/galinha.jpeg" onclick="showSlide(0); openLightbox(0)">
+            <div class="carousel-slide">
+                <img class="carousel-img" src="/3.jpeg" onclick="showSlide(2); openLightbox(2)">
             </div>
-            <div class="carousel-slide active">
-                <img class="carousel-img active" src="fotos/galinhas.jpeg" onclick="showSlide(0); openLightbox(0)">
+            <div class="carousel-slide">
+                <img class="carousel-img" src="/4.jpeg" onclick="showSlide(3); openLightbox(3)">
             </div>
-            <div class="carousel-slide active">
-                <img class="carousel-img active" src="fotos/alface.jpeg" onclick="showSlide(0); openLightbox(0)">
+            <div class="carousel-slide">
+                <img class="carousel-img" src="/5.jpeg" onclick="showSlide(4); openLightbox(4)">
             </div>
-            <div class="carousel-slide active">
-                <img class="carousel-img active" src="fotos/alfaces.jpeg" onclick="showSlide(0); openLightbox(0)">
+            <div class="carousel-slide">
+                <img class="carousel-img" src="/13.jpeg" onclick="showSlide(5); openLightbox(5)">
             </div>
-            <div class="carousel-slide active">
-                <img class="carousel-img active" src="fotos/oculos.jpeg" onclick="showSlide(0); openLightbox(0)">
+            <div class="carousel-slide">
+                <img class="carousel-img" src="/7.jpeg" onclick="showSlide(6); openLightbox(6)">
             </div>
-            <div class="carousel-slide active">
-                <img class="carousel-img active" src="fotos/cavalo.jpeg" onclick="showSlide(0); openLightbox(0)">
+            <div class="carousel-slide">
+                <img class="carousel-img" src="/8.jpeg" onclick="showSlide(7); openLightbox(7)">
             </div>
-            <div class="carousel-slide active">
-                <img class="carousel-img active" src="fotos/arvore.jpeg" onclick="showSlide(0); openLightbox(0)">
+            <div class="carousel-slide">
+                <img class="carousel-img" src="/9.jpeg" onclick="showSlide(8); openLightbox(8)">
             </div>
-         
+            <div class="carousel-slide">
+                <img class="carousel-img" src="/10.jpeg" onclick="showSlide(9); openLightbox(9)">
+            </div>
+            <!-- Adicione mais divs para as outras imagens -->
         </div>
         <div class="carousel-nav">
             <button onclick="moveCarousel('prev')">←</button>
             <button onclick="moveCarousel('next')">→</button>
         </div>
     </div>
-
-    <!-- Lightbox -->
     <div class="lightbox" onclick="closeLightbox()">
         <img src="" alt="Imagem Ampliada">
     </div>
-</bodyy>
-</html>
+    </div>
+</body>
