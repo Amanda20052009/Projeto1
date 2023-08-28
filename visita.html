@@ -13,56 +13,25 @@
             <h2>Relatório da visita</h2>
         </div>
 
-        <div class="visit-list">
-            <div class="visit">
-                <img src="fotos/ifro.jpeg" alt="fotos" class="clickable-image">
+        <div class="carousel-container">
+        <div class="carousel-wrapper">
+            <div class="carousel-slide active">
+                <img class="carousel-img active" src="fotos/coelho.jpeg" onclick="showSlide(0); openLightbox(0)">
             </div>
-             <script src="script.js"></script>
-
-        <div class="visit-list">
-            <div class="visit">
-                <img src="fotos/arvore.jpeg" alt="fotos" class="item">
+            <div class="carousel-slide">
+                <img class="carousel-img" src="fotos/coelhos.jpeg" onclick="showSlide(1); openLightbox(1)">
             </div>
+            <!-- Adicione mais divs para as outras imagens -->
+        </div>
+        <div class="carousel-nav">
+            <button onclick="moveCarousel('prev')">←</button>
+            <button onclick="moveCarousel('next')">→</button>
+        </div>
+    </div>
 
-            <div class="visit-list">
-            <div class="visit">
-                <img src="fotos/alface.jpeg" alt="fotos" class="item">
-            </div>
-
-            <div class="visit-list">
-            <div class="visit">
-                <img src="fotos/alfaces.jpeg" alt="fotos" class="item">
-            </div>
-
-            <div class="visit-list">
-            <div class="visit">
-                <img src="fotos/coelho.jpeg" alt="fotos" class="item">
-            </div>
-
-            <div class="visit-list">
-            <div class="visit">
-                <img src="fotos/coelhos.jpeg" alt="fotos" class="item">
-            </div>
-
-            <div class="visit-list">
-            <div class="visit">
-                <img src="fotos/cavalo.jpeg" alt="fotos" class="item">
-            </div>
-
-            <div class="visit-list">
-            <div class="visit">
-                <img src="fotos/oculos.jpeg" alt="fotos" class="item">
-            </div>
-
-            <div class="visit-list">
-            <div class="visit">
-                <img src="fotos/galinha.jpeg" alt="fotos" class="item">
-            </div>
-
-            <div class="visit-list">
-            <div class="visit">
-                <img src="fotos/galinhas.jpeg" alt="fotos" class="item">
-            </div>
-
+    <!-- Lightbox -->
+    <div class="lightbox" onclick="closeLightbox()">
+        <img src="" alt="Imagem Ampliada">
+    </div>
 </bodyy>
 </html>
