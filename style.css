@@ -90,19 +90,13 @@ a {
 
 .visit-list {
    
-    display: grid;
+    display: flex;
+    flex-directon: inline;
     cursor: pointer;
     padding: 20px;
 }
 
-.visit {
-    width: calc(25% - 20px);
-    margin-bottom: 20px;
-    background-color: #DCDCDC;
-    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    padding: 15px;
-}
+
 
 .item {
     width: 100%;
