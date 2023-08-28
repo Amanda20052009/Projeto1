@@ -1,33 +1,37 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fotos em Preto e Branco</title>
+<style>
+  body {
+    background-color: white;
+    color: black;
+    font-family: Arial, sans-serif;
+  }
+  
+  img {
+    max-width: 100%;
+    height: auto;
+    filter: grayscale(100%);
+  }
+  
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+  }
+</style>
 </head>
 <body>
- <h1>Visita técnica </h1><br>
-
-  <h1>Aqui ficará o texto de relatório da visita técnica.</h1><br>
-  
-  <h1>Aqui ficará a galeria de fotos</h1>
-
- <div class="header">
-    <h1>Galeria de Fotos</h1>
+  <h1>Fotos em Preto e Branco</h1>
+  <div class="container">
+    <img src="fotos_arvore.jpeg" alt="Foto 1">
+    <img src="fotos_2.jpeg" alt="Foto 2">
+    <img src="caminho_da_imagem_3.jpg" alt="Foto 3">
   </div>
-  <!DOCTYPE html>
-<head>
-    <link rel="stylesheet" href="style.css">
-</head>
-    <div class="magazine">
-        <div class="slogan">
-            <h3>Galeria de Fotos</h3>
-        </div>
-
-        <div class="visit-list">
-            <div class="visit">
-                <img src="fotos/arvore.jpeg" alt="fotos" class="item">
-           
-            </div>
-            
-     
 </body>
 </html>
-
