@@ -89,9 +89,8 @@ a {
 }
 
 .visit-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+   
+    display: grid;
     cursor: pointer;
     padding: 20px;
 }
