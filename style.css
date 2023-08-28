@@ -66,16 +66,28 @@ a {
     font-family: Arial, sans-serif;
   }
   
-  .pretoebranco {
+ // 
+
+{
+    background-color: white;
+    color: black;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
     padding: 20px;
+    background-color: black;
   }
   
-  .pretoebranco img {
+  .container img {
     max-width: 100%;
     height: auto;
-    filter: grayscale(100%);
+    max-height: 300px; /* Altura máxima das fotos */
+    border: 5px solid white; /* Borda branca */
   }
