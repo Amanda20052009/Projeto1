@@ -2,6 +2,76 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    background-color: #FFFFFF; 
+}
+
+.magazine {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.slogan {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.restaurant-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.restaurant {
+    width: calc(25% - 20px); /* Distribuir em 4 colunas com margem */
+    margin-bottom: 20px;
+    background-color: #C0C0C0;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 15px;
+}
+
+.item {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.button {
+    background-color: #000000;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+    display: block;
+    margin: 0 auto;
+}
+
+.button:hover {
+    background-color: #000000;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+}
+
+{
+    background-color: white;
+    color: black;
+    font-family: Arial, sans-serif;
+  }
+
+//
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
     background-color: #C0C0C0; 
 }
 
