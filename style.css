@@ -67,8 +67,13 @@ a {
   }
   
  // 
-
-body {
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  body {
     background-color: #000;
     color: #fff;
     margin: 0;
@@ -82,34 +87,29 @@ body {
   }
 
   .gallery {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
     padding: 20px;
-  }
-
-  .photo {
-    width: 300px;
-    height: 200px;
-    background-color: #fff;
-    border: 1px solid #0074D9;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #000;
-    font-weight: bold;
-    font-size: 18px;
-  }
-
-  /* Estilizando a barra de rolagem */
-  .gallery {
+    max-width: 1200px;
+    margin: 0 auto;
     overflow-y: scroll;
+    max-height: 70vh;
     scrollbar-color: #0074D9 #000;
     scrollbar-width: thin;
   }
 
-  /* Cor da barra de rolagem */
+  .photo {
+    width: 100%;
+    height: 200px;
+    background-color: #fff;
+    background-image: url('path/to/your/image.jpg');
+    background-size: cover;
+    background-position: center;
+    border: 1px solid #0074D9;
+  }
+
+  /* Estilizando a barra de rolagem */
   .gallery::-webkit-scrollbar {
     width: 8px;
   }
