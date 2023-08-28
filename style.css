@@ -59,3 +59,23 @@ a {
     display: block;
     text-align: center;
 }
+
+{
+    background-color: white;
+    color: black;
+    font-family: Arial, sans-serif;
+  }
+  
+  .pretoebranco {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  .pretoebranco img {
+    max-width: 100%;
+    height: auto;
+    filter: grayscale(100%);
+  }
