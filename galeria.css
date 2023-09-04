@@ -47,28 +47,3 @@
     max-height: 90%;
 }
 
-body {
-            font-family: Arial, sans-serif;
-        }
-
-.header {
-            background-color: #000000;
-            color: #fff;
-            padding: 10px;
-            text-align: center;
-        }
-
-  .report {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #f0f0f0;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-        }
-
-.image {
-            max-width: 100%;
-            height: auto;
-        }
-
-
