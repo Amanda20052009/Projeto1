@@ -27,6 +27,7 @@
     border: none;
     font-size: 30px;
     cursor: pointer;
+    margin: auto;
 }
 
 .lightbox {
