@@ -20,12 +20,12 @@
 .carousel-nav {
     display: flex;
     justify-content: space-between;
-    margin-top: 10px;
+    margin-top: 30px;
 }
 .carousel-nav button {
     background: none;
     border: none;
-    font-size: 20px;
+    font-size: 30px;
     cursor: pointer;
 }
 
