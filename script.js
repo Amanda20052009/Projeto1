@@ -1,4 +1,4 @@
-// JavaScript para controlar o carrossel
+
         let currentSlide = 0;
 
         function showSlide(index) {
