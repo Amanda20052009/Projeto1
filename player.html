@@ -1,107 +1,66 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Playlist</title>
+  <title>Spotify Clone</title>
   <style>
     body {
-      background-color: black;
-      color: white; 
       font-family: Arial, sans-serif;
+      background-color: black;
+      color: white;
     }
 
-    h1 {
+    .header {
       text-align: center;
       padding: 20px;
     }
 
-    .container {
+    .playlist {
       max-width: 600px;
       margin: 0 auto;
-      padding: 20px;
-      box-sizing: border-box;
     }
 
-    .input-container {
-      display: flex;
-      margin-bottom: 10px;
-    }
-
-    .input-container input {
-      flex: 1;
-      padding: 10px;
-      border: none;
-      border-radius: 5px;
-      font-size: 16px;
-    }
-
-    .input-container button {
-      padding: 10px 20px;
-      border: none;
-      border-radius: 5px;
-      background-color: #2ecc71;
-      color: white;
-      font-size: 16px;
-      cursor: pointer;
-    }
-
-    .input-container button:hover {
-      background-color: #27ae60;
-    }
-
-    ul {
-      list-style-type: none;
-      padding: 0;
-    }
-
-    li {
-      margin-bottom: 5px;
-    }
-
-    .controls-container {
+    .controls {
       display: flex;
       justify-content: center;
+      margin-top: 20px;
     }
 
-    .controls-container button {
+    .controls button {
       padding: 10px 20px;
-      margin: 0 5px;
+      margin: 0 10px;
       border: none;
       border-radius: 5px;
       font-size: 16px;
       cursor: pointer;
     }
 
-    .controls-container button:hover {
+    .controls button:hover {
       background-color: #2ecc71;
     }
 
-    audio {
-      width: 100%;
-      margin-top: 20px;
+    .controls button:active {
+      background-color: #27ae60;
     }
   </style>
 </head>
 <body>
 
-<h1>Playlist</h1>
-
-<div class="container">
-  <div class="input-container">
-    <input type="text" id="songInput" placeholder="URL da música">
-    <button onclick="addSong()">Adicionar</button>
-  </div>
-
-  <ul id="playlist"></ul>
-
-  <div class="controls-container">
-    <button onclick="play()">Play</button>
-    <button onclick="pause()">Pausar</button>
-    <button onclick="nextSong()">Próxima</button>
-    <button onclick="previousSong()">Anterior</button>
-  </div>
-
-  <audio id="audioPlayer" controls></audio>
+<div class="header">
+  <h1>Spotify Clone</h1>
 </div>
+
+<div class="playlist">
+  <ul id="playlist"></ul>
+</div>
+
+<div class="controls">
+  <button onclick="play()">Play</button>
+  <button onclick="pause()">Pause</button>
+  <button onclick="nextSong()">Next</button>
+  <button onclick="previousSong()">Previous</button>
+</div>
+
+<audio id="audioPlayer" controls></audio>
 
 <script>
   const songs = [
@@ -110,45 +69,34 @@
     'URL_da_musica_3'
   ];
   let currentSongIndex = 0;
+  const audioPlayer = document.getElementById('audioPlayer');
 
   function displayPlaylist() {
-    const playlistElement = document.getElementById("playlist");
-    playlistElement.innerHTML = "";
+    const playlistElement = document.getElementById('playlist');
+    playlistElement.innerHTML = '';
     songs.forEach((song, index) => {
-      const listItem = document.createElement("li");
+      const listItem = document.createElement('li');
       listItem.innerText = `${index + 1}. Música ${index + 1}`;
       playlistElement.appendChild(listItem);
     });
   }
 
-  function addSong() {
-    const songInput = document.getElementById("songInput").value;
-    if (songInput) {
-      songs.push(songInput);
-      displayPlaylist();
-    }
-  }
-
   function play() {
-    const audioPlayer = document.getElementById("audioPlayer");
     audioPlayer.src = songs[currentSongIndex];
     audioPlayer.play();
   }
 
   function pause() {
-    const audioPlayer = document.getElementById("audioPlayer");
     audioPlayer.pause();
   }
 
   function nextSong() {
-    const audioPlayer = document.getElementById("audioPlayer");
     currentSongIndex = (currentSongIndex + 1) % songs.length;
     audioPlayer.src = songs[currentSongIndex];
     audioPlayer.play();
   }
 
   function previousSong() {
-    const audioPlayer = document.getElementById("audioPlayer");
     currentSongIndex = (currentSongIndex - 1 + songs.length) % songs.length;
     audioPlayer.src = songs[currentSongIndex];
     audioPlayer.play();
