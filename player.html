@@ -1,77 +1,89 @@
-class Playlist:
-    def __init__(self):
-        self.songs = []
-        self.current_song_index = 0
-        self.isPlaying = False
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Playlist</title>
+</head>
+<body>
 
-    def add_song(self, song):
-        self.songs.append(song)
+<h1>Playlist</h1>
 
-    def display_playlist(self):
-        if self.songs:
-            print("Playlist:")
-            for index, song in enumerate(self.songs, start=1):
-                print(f"{index}. {song}")
-        else:
-            print("Playlist is empty.")
+<div>
+  <label for="songInput">Adicionar música: </label>
+  <input type="text" id="songInput">
+  <button onclick="addSong()">Adicionar</button>
+</div>
 
-    def play(self):
-        if not self.songs:
-            print("Playlist is empty. Add songs first.")
-            return
+<ul id="playlist"></ul>
 
-        if self.isPlaying:
-            print("Playlist is already playing.")
-        else:
-            self.isPlaying = True
-            print(f"Playing: {self.songs[self.current_song_index]}")
+<button onclick="play()">Play</button>
+<button onclick="pause()">Pausar</button>
+<button onclick="nextSong()">Próxima</button>
+<button onclick="previousSong()">Anterior</button>
 
-    def pause(self):
-        if self.isPlaying:
-            self.isPlaying = False
-            print("Playback paused.")
-        else:
-            print("Playlist is already paused.")
+<script>
+  let songs = [];
+  let currentSongIndex = 0;
+  let isPlaying = false;
 
-    def next_song(self):
-        if self.isPlaying:
-            self.current_song_index = (self.current_song_index + 1) % len(self.songs)
-            print(f"Playing next song: {self.songs[self.current_song_index]}")
-        else:
-            print("Play a song first.")
+  function addSong() {
+    const songInput = document.getElementById("songInput").value;
+    if (songInput) {
+      songs.push(songInput);
+      displayPlaylist();
+    }
+  }
 
-    def previous_song(self):
-        if self.isPlaying:
-            self.current_song_index = (self.current_song_index - 1) % len(self.songs)
-            print(f"Playing previous song: {self.songs[self.current_song_index]}")
-        else:
-            print("Play a song first.")
+  function displayPlaylist() {
+    const playlistElement = document.getElementById("playlist");
+    playlistElement.innerHTML = "";
+    songs.forEach((song, index) => {
+      const listItem = document.createElement("li");
+      listItem.innerText = `${index + 1}. ${song}`;
+      playlistElement.appendChild(listItem);
+    });
+  }
 
+  function play() {
+    if (songs.length === 0) {
+      alert("A playlist está vazia. Adicione músicas primeiro.");
+      return;
+    }
 
-# Exemplo de uso
-if __name__ == "__main__":
-    playlist = Playlist()
+    if (!isPlaying) {
+      isPlaying = true;
+      alert("Reproduzindo: " + songs[currentSongIndex]);
+    } else {
+      alert("A playlist já está sendo reproduzida.");
+    }
+  }
 
-    # Adiciona músicas à playlist
-    playlist.add_song("Song 1 - Artist 1")
-    playlist.add_song("Song 2 - Artist 2")
-    playlist.add_song("Song 3 - Artist 3")
+  function pause() {
+    if (isPlaying) {
+      isPlaying = false;
+      alert("Reprodução pausada.");
+    } else {
+      alert("A playlist já está pausada.");
+    }
+  }
 
-    # Exibe a playlist
-    playlist.display_playlist()
+  function nextSong() {
+    if (isPlaying) {
+      currentSongIndex = (currentSongIndex + 1) % songs.length;
+      alert("Próxima música: " + songs[currentSongIndex]);
+    } else {
+      alert("Reproduza uma música primeiro.");
+    }
+  }
 
-    # Reproduz a primeira música da playlist
-    playlist.play()
+  function previousSong() {
+    if (isPlaying) {
+      currentSongIndex = (currentSongIndex - 1 + songs.length) % songs.length;
+      alert("Música anterior: " + songs[currentSongIndex]);
+    } else {
+      alert("Reproduza uma música primeiro.");
+    }
+  }
+</script>
 
-    # Pula para a próxima música
-    playlist.next_song()
-
-    # Pausa a reprodução
-    playlist.pause()
-
-    # Volta para a música anterior
-    playlist.previous_song()
-
-    # Continua a reprodução
-    playlist.play()
-
+</body>
+</html>
