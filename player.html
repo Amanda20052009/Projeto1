@@ -2,28 +2,124 @@
 <html>
 <head>
   <title>Playlist</title>
+  <style>
+    body {
+      background-color: black;
+      color: white;
+      font-family: Arial, sans-serif;
+    }
+
+    h1 {
+      text-align: center;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    .input-container {
+      display: flex;
+      margin-bottom: 10px;
+    }
+
+    .input-container input {
+      flex: 1;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+    .input-container button {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      background-color: #2ecc71;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .input-container button:hover {
+      background-color: #27ae60;
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    li {
+      margin-bottom: 5px;
+    }
+
+    .controls-container {
+      display: flex;
+      justify-content: center;
+    }
+
+    .controls-container button {
+      padding: 10px 20px;
+      margin: 0 5px;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .controls-container button:hover {
+      background-color: #2ecc71;
+    }
+
+    audio {
+      width: 100%;
+      margin-top: 20px;
+    }
+  </style>
 </head>
 <body>
 
 <h1>Playlist</h1>
 
-<div>
-  <label for="songInput">Adicionar música: </label>
-  <input type="text" id="songInput">
-  <button onclick="addSong()">Adicionar</button>
+<div class="container">
+  <div class="input-container">
+    <input type="text" id="songInput" placeholder="URL da música">
+    <button onclick="addSong()">Adicionar</button>
+  </div>
+
+  <ul id="playlist"></ul>
+
+  <div class="controls-container">
+    <button onclick="play()">Play</button>
+    <button onclick="pause()">Pausar</button>
+    <button onclick="nextSong()">Próxima</button>
+    <button onclick="previousSong()">Anterior</button>
+  </div>
+
+  <audio id="audioPlayer" controls></audio>
 </div>
 
-<ul id="playlist"></ul>
-
-<button onclick="play()">Play</button>
-<button onclick="pause()">Pausar</button>
-<button onclick="nextSong()">Próxima</button>
-<button onclick="previousSong()">Anterior</button>
-
 <script>
-  let songs = [];
+  const songs = [
+    'URL_da_musica_1',
+    'URL_da_musica_2',
+    'URL_da_musica_3'
+  ];
   let currentSongIndex = 0;
-  let isPlaying = false;
+
+  function displayPlaylist() {
+    const playlistElement = document.getElementById("playlist");
+    playlistElement.innerHTML = "";
+    songs.forEach((song, index) => {
+      const listItem = document.createElement("li");
+      listItem.innerText = `${index + 1}. Música ${index + 1}`;
+      playlistElement.appendChild(listItem);
+    });
+  }
 
   function addSong() {
     const songInput = document.getElementById("songInput").value;
@@ -33,56 +129,32 @@
     }
   }
 
-  function displayPlaylist() {
-    const playlistElement = document.getElementById("playlist");
-    playlistElement.innerHTML = "";
-    songs.forEach((song, index) => {
-      const listItem = document.createElement("li");
-      listItem.innerText = `${index + 1}. ${song}`;
-      playlistElement.appendChild(listItem);
-    });
-  }
-
   function play() {
-    if (songs.length === 0) {
-      alert("A playlist está vazia. Adicione músicas primeiro.");
-      return;
-    }
-
-    if (!isPlaying) {
-      isPlaying = true;
-      alert("Reproduzindo: " + songs[currentSongIndex]);
-    } else {
-      alert("A playlist já está sendo reproduzida.");
-    }
+    const audioPlayer = document.getElementById("audioPlayer");
+    audioPlayer.src = songs[currentSongIndex];
+    audioPlayer.play();
   }
 
   function pause() {
-    if (isPlaying) {
-      isPlaying = false;
-      alert("Reprodução pausada.");
-    } else {
-      alert("A playlist já está pausada.");
-    }
+    const audioPlayer = document.getElementById("audioPlayer");
+    audioPlayer.pause();
   }
 
   function nextSong() {
-    if (isPlaying) {
-      currentSongIndex = (currentSongIndex + 1) % songs.length;
-      alert("Próxima música: " + songs[currentSongIndex]);
-    } else {
-      alert("Reproduza uma música primeiro.");
-    }
+    const audioPlayer = document.getElementById("audioPlayer");
+    currentSongIndex = (currentSongIndex + 1) % songs.length;
+    audioPlayer.src = songs[currentSongIndex];
+    audioPlayer.play();
   }
 
   function previousSong() {
-    if (isPlaying) {
-      currentSongIndex = (currentSongIndex - 1 + songs.length) % songs.length;
-      alert("Música anterior: " + songs[currentSongIndex]);
-    } else {
-      alert("Reproduza uma música primeiro.");
-    }
+    const audioPlayer = document.getElementById("audioPlayer");
+    currentSongIndex = (currentSongIndex - 1 + songs.length) % songs.length;
+    audioPlayer.src = songs[currentSongIndex];
+    audioPlayer.play();
   }
+
+  displayPlaylist();
 </script>
 
 </body>
