@@ -1,1 +1,77 @@
+class Playlist:
+    def __init__(self):
+        self.songs = []
+        self.current_song_index = 0
+        self.isPlaying = False
+
+    def add_song(self, song):
+        self.songs.append(song)
+
+    def display_playlist(self):
+        if self.songs:
+            print("Playlist:")
+            for index, song in enumerate(self.songs, start=1):
+                print(f"{index}. {song}")
+        else:
+            print("Playlist is empty.")
+
+    def play(self):
+        if not self.songs:
+            print("Playlist is empty. Add songs first.")
+            return
+
+        if self.isPlaying:
+            print("Playlist is already playing.")
+        else:
+            self.isPlaying = True
+            print(f"Playing: {self.songs[self.current_song_index]}")
+
+    def pause(self):
+        if self.isPlaying:
+            self.isPlaying = False
+            print("Playback paused.")
+        else:
+            print("Playlist is already paused.")
+
+    def next_song(self):
+        if self.isPlaying:
+            self.current_song_index = (self.current_song_index + 1) % len(self.songs)
+            print(f"Playing next song: {self.songs[self.current_song_index]}")
+        else:
+            print("Play a song first.")
+
+    def previous_song(self):
+        if self.isPlaying:
+            self.current_song_index = (self.current_song_index - 1) % len(self.songs)
+            print(f"Playing previous song: {self.songs[self.current_song_index]}")
+        else:
+            print("Play a song first.")
+
+
+# Exemplo de uso
+if __name__ == "__main__":
+    playlist = Playlist()
+
+    # Adiciona músicas à playlist
+    playlist.add_song("Song 1 - Artist 1")
+    playlist.add_song("Song 2 - Artist 2")
+    playlist.add_song("Song 3 - Artist 3")
+
+    # Exibe a playlist
+    playlist.display_playlist()
+
+    # Reproduz a primeira música da playlist
+    playlist.play()
+
+    # Pula para a próxima música
+    playlist.next_song()
+
+    # Pausa a reprodução
+    playlist.pause()
+
+    # Volta para a música anterior
+    playlist.previous_song()
+
+    # Continua a reprodução
+    playlist.play()
 
