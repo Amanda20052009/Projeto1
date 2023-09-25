@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Music Player</title>
+  <title>Rádio</title>
   <style>
     body {
       display: flex;
@@ -34,8 +34,22 @@
       }
   
       .playlist-item audio {
-        margin-right: 10px;
+        margin-right: 15px;
       }
+
+      .controls button {
+        color: black; 
+        margin-right: 20px; 
+        width: 65px; 
+        background-color: transparent; 
+        border: none; 
+        font-size: 24px;
+      }
+  
+      .controls button:last-child {
+        margin-right: 0; 
+      }
+  
   </style>
 </head>
 <body>
@@ -52,13 +66,14 @@
       <div class="progress-bar"></div>
 
       
-      <audio id="audioPlayer" controls></audio>
+      <audio id="audioPlayer" controls></audio><br><br>
 
       <div class="controls">
-        <button id="playButton">Play</button>
-        <button id="pauseButton">Pausar</button>
-        <button id="nextButton">Próxima</button>
-        <button id="prevButton">Anterior</button>
+        <button id="prevButton">◀◀</button>
+        <button id="playButton">▶</button>
+        <button id="pauseButton">❚❚</button>
+        <button id="nextButton">▶▶</button><br><br><br>
+        <span id="trackCounter">1 de 10</span>
       </div><br>
 
       <div class="playlist">
@@ -135,6 +150,12 @@
       audioPlayer.src = playlist[index].src;
       audioPlayer.play();
       updateSongInfo(index);
+      updateTrackCounter(index);
+    }
+
+    function updateTrackCounter(index) {
+      const trackCounter = document.getElementById('trackCounter');
+      trackCounter.textContent = `${index + 1} de ${playlist.length}`;
     }
 
     playButton.addEventListener('click', () => {
