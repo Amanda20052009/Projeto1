@@ -1,1 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Music Player</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: rgb(0, 0, 0)
+    }
+
+    .container {
+      background-color: rgba(255, 255, 255, 0.7);
+      border-radius: 10px;
+      width: 80%;
+      max-width: 400px;
+      padding: 20px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="player">
+      <div class="info">
+        <h1 id="songTitle"></h1>
+        <p id="artistName"></p>
+      </div>
+      <div class="progress-bar"></div>
+
+      
+      <audio id="audioPlayer" controls></audio>
+
+      <div class="controls">
+        <button id="playButton">Play</button>
+        <button id="pauseButton">Pausar</button>
+        <button id="nextButton">Próxima</button>
+        <button id="prevButton">Anterior</button>
+      </div><br>
+
+      <div class="playlist">
+        <div>
+          Jorge & Mateus - Dói
+          <audio src="/musicas/doi.mp3"></audio>
+        </div><br>
+        <div>
+          Jorge e Mateus - 5 Regras
+          <audio src="/musicas/5-regras.mp3"></audio>
+        </div><br>
+        <div>
+          Jorge e Mateus - Tem que sorrir 
+          <audio src="/musicas/tem-que-sorrir.mp3"></audio>
+        </div><br>
+        <div>
+          Felipe Amorim - Toca o trompete 
+          <audio src="/musicas/toca-o-trompete.mp3"></audio>
+        </div><br>
+        <div>
+          Zé Neto e Cristiano - Pátio do posto
+          <audio src="/musicas/patio-do-posto.mp3"></audio>
+        </div><br>
+        <div>
+          Israel e Rodolffo - Eu não dou conta
+          <audio src="/musicas/eu-nao-dou-conta.mp3"></audio>
+        </div><br>
+        <div>
+          Zé Neto e Cristiano - Um mês e pouco
+          <audio src="/musicas/um-mes-e-pouco.mp3"></audio>
+        </div><br>
+        <div>
+          Zé Neto e Cristiano - Barulho o Foguete
+          <audio src="/musicas/barulho-do-foguete.mp3"></audio>
+        </div><br>
+        <div>
+          Israel e Rodolffo - Voltou com quem não voltava
+          <audio src="/musicas/voltou-com-quem-nao-voltava.mp3"></audio>
+        </div><br>
+        <div>
+          Ícaro e Gilmar - Back in black/Anna Júlia/A sua maneira 
+          <audio src="/musicas/icaro-e-gilmar.mp3"></audio>
+        </div><br>
+        <div>
+          Grupo menos é mais e Matheus Fernandes - Lapada dela 
+          <audio src="/musicas/ladapa-dela.mp3"></audio>
+        </div><br>
+        
+        
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    const audioPlayer = document.getElementById('audioPlayer');
+    const playButton = document.getElementById('playButton');
+    const pauseButton = document.getElementById('pauseButton');
+    const nextButton = document.getElementById('nextButton');
+    const prevButton = document.getElementById('prevButton');
+    const songTitle = document.getElementById('songTitle');
+    const artistName = document.getElementById('artistName');
+    const playlist = document.querySelectorAll('.playlist div audio');
+
+    let currentSongIndex = 0;
+
+    function updateSongInfo(index) {
+
+      const songInfo = [
+        { title: 'Dói', artist: 'Jorge & Mateus' },
+        { title: '5 Regras', artist: 'Jorge e Mateus' },
+        { title: 'Tem que sorrir', artist: 'Jorge e Mateus' },
+        { title: 'Toca o trompete', artist: 'Felipe Amorim' },
+        { title: 'Pátio do posto', artist: 'Zé Neto e Cristiano' },
+        { title: 'Eu não dou conta', artist: 'Israel e Rodolffo' },
+        { title: 'Um mês e pouco', artist: 'Zé Neto e Cristiano' },
+        { title: 'Barulho do foguete', artist: 'Zé Neto e Cristiano' },
+        { title: 'Voltou com quem não voltava', artist: 'Israel e Rodolffo' },
+        { title: 'Back in black/Anna Júlia/A sua maneira', artist: 'Ícaro e Gilmar' },
+        { title: 'Lapada dela', artist: 'Grupo Menos é Mais e Matheus Fernandes' },
+        
+        
+        { title: 'Um mês e pouco', artist: 'Zé Neto e Cristiano' },
+        
+        
+      ];
+
+      songTitle.textContent = songInfo[index].title;
+      artistName.textContent = songInfo[index].artist;
+    }
+
+    function playSong(index) {
+      audioPlayer.src = playlist[index].src;
+      audioPlayer.play();
+      updateSongInfo(index);
+    }
+
+    playButton.addEventListener('click', () => {
+      audioPlayer.play();
+    });
+
+    pauseButton.addEventListener('click', () => {
+      audioPlayer.pause();
+    });
+
+    nextButton.addEventListener('click', () => {
+      currentSongIndex = (currentSongIndex + 1) % playlist.length;
+      playSong(currentSongIndex);
+    });
+
+    prevButton.addEventListener('click', () => {
+      currentSongIndex = (currentSongIndex - 1 + playlist.length) % playlist.length;
+      playSong(currentSongIndex);
+    });
+
+    playlist.forEach((audio, index) => {
+      audio.addEventListener('click', () => {
+        currentSongIndex = index;
+        playSong(currentSongIndex);
+      });
+    });
+  </script>
+</body>
+</html>
 
