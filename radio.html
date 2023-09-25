@@ -46,6 +46,8 @@
             <h1 id="songTitle"></h1>
             <p id="artistName"></p>
           </div>
+
+          
     
       <div class="progress-bar"></div>
 
@@ -53,56 +55,54 @@
       <audio id="audioPlayer" controls></audio>
 
       <div class="controls">
-        <button id="prevButton">Anterior</button>
         <button id="playButton">Play</button>
         <button id="pauseButton">Pausar</button>
         <button id="nextButton">Próxima</button>
-        
+        <button id="prevButton">Anterior</button>
       </div><br>
 
       <div class="playlist">
-        
+
         <div class="playlist-item">
-          <div class="playlist-item">
-          Zé Neto e Cristiano - Um mês e pouco
-          <audio src="musicas/um-mes-e-pouco.mp3"></audio>
+          <audio src="/musicas/5-regras.mp3"></audio>
+          <span>Jorge e Mateus - 5 Regras</span>
         </div>
         <div class="playlist-item">
           Zé Neto e Cristiano - Barulho o Foguete
-          <audio src="musicas/barulho-do-foguete.mp3"></audio>
+          <audio src="/musicas/barulho-do-foguete.mp3"></audio>
         </div>
         <div class="playlist-item">
           Israel e Rodolffo - Voltou com quem não voltava
-          <audio src="musicas/voltou-com-quem-nao-voltava.mp3"></audio>
+          <audio src="/musicas/voltou-com-quem-nao-voltava.mp3"></audio>
         </div>
         <div class="playlist-item">
           Ícaro e Gilmar - Back in black/Anna Júlia/A sua maneira 
-          <audio src="musicas/icaro-e-gilmar.mp3"></audio>
+          <audio src="/musicas/icaro-e-gilmar.mp3"></audio>
         </div>
         <div class="playlist-item">
           Grupo menos é mais e Matheus Fernandes - Lapada dela 
-          <audio src="musicas/ladapa-dela.mp3"></audio>
+          <audio src="/musicas/ladapa-dela.mp3"></audio>
         </div>
-            <audio src="musicas/5-regras.mp3"></audio>
-            <span>Jorge e Mateus - 5 Regras</span>
-          </div>
         <div class="playlist-item">
           Jorge e Mateus - Tem que sorrir 
-          <audio src="musicas/tem-que-sorrir.mp3"></audio>
+          <audio src="/musicas/tem-que-sorrir.mp3"></audio>
         </div>
         <div class="playlist-item">
           Felipe Amorim - Toca o trompete 
-          <audio src="musicas/toca-o-trompete.mp3"></audio>
+          <audio src="/musicas/toca-o-trompete.mp3"></audio>
         </div>
         <div class="playlist-item">
           Zé Neto e Cristiano - Pátio do posto
-          <audio src="musicas/patio-do-posto.mp3"></audio>
+          <audio src="/musicas/patio-do-posto.mp3"></audio>
         </div>
         <div class="playlist-item">
           Israel e Rodolffo - Eu não dou conta
-          <audio src="musicas/eu-nao-dou-conta.mp3"></audio>
+          <audio src="/musicas/eu-nao-dou-conta.mp3"></audio>
         </div>
-        
+        <div class="playlist-item">
+          Zé Neto e Cristiano - Um mês e pouco
+          <audio src="/musicas/um-mes-e-pouco.mp3"></audio>
+        </div>
       </div>
 
     </div>
@@ -123,16 +123,16 @@
     function updateSongInfo(index) {
 
       const songInfo = [
-        { title: 'Um mês e pouco', artist: 'Zé Neto e Cristiano' },
+        { title: '5 Regras', artist: 'Jorge e Mateus' },
         { title: 'Barulho do foguete', artist: 'Zé Neto e Cristiano' },
         { title: 'Voltou com quem não voltava', artist: 'Israel e Rodolffo' },
         { title: 'Back in black/Anna Júlia/A sua maneira', artist: 'Ícaro e Gilmar' },
         { title: 'Lapada dela', artist: 'Grupo Menos é Mais e Matheus Fernandes' },
-        { title: '5 Regras', artist: 'Jorge e Mateus' },
         { title: 'Tem que sorrir', artist: 'Jorge e Mateus' },
         { title: 'Toca o trompete', artist: 'Felipe Amorim' },
         { title: 'Pátio do posto', artist: 'Zé Neto e Cristiano' },
         { title: 'Eu não dou conta', artist: 'Israel e Rodolffo' },
+        { title: 'Um mês e pouco', artist: 'Zé Neto e Cristiano' },
         
         
       ];
